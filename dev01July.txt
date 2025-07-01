@@ -1,0 +1,41 @@
+What is React?
+---------------
+React is a library that is developed by Facebook mainly focusing on rendering components on a web-page without disturbing the complete HTML DOM. This works for web-applications using React and ReactDOM. This framework help to create front-end for webpages with basic functionalities like state-management, component creation, setting-props, ...
+
+Why is required?
+-----------------------------------------
+It is required in order to update HTML elements specifically as per need without disturbing the complete HTML DOM.
+
+How basically React works?
+------------------------------
+From the basic template, App() is a function that has element rendering instructions exported to main.jsx. This file has import from component logic written in App.jsx(also called as a component), and further referred to root element render:
+
+createRoot(document.getElementById('root')).render(
+  <App />
+)
+
+
+How to install React, Vite Boilerplate:
+---------------------------------------
+npm create vite@latest
+npm install 
+<set all project settings/>
+npm run dev ::> to run the server 
+
+React Folder structure
+
+
+JSX : JavaScript XML
+
+
+React Hooks:
+---------------
+These are functional components. These are special type of functions which provide powerful features in React such as:
+- State-management.
+- Life-cycle methods
+- optimizations
+- sidestack loading
+- DOM manipulation
+
+
+Use State function: to change the characteristics for an element on DOM for particular actions such as button clicks..
