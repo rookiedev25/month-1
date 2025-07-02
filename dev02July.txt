@@ -1,0 +1,11 @@
+How do we import any CSS in Main.jsx to get the styles
+--------------------------------------------------------
+Mainly these are the elements that are part of src folder. We can have multiple css files that can be imported further in main.jsx being the parent for including changes from App component. 
+
+These can be done using TailWindCSS - a framework that helps write better css with modules and code inbuilt just import and plug and play system
+
+- how to install TailWindCSS onto your react project
+- how to use in UI
+
+I built a small div card with basic demo information just to see how it is different than writing plain CSS
+
