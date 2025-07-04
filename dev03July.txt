@@ -1,0 +1,20 @@
+Form handling in React
+-----------------------
+we started with adding a form in App.jsx where we specified only a input field along with a submit button. 
+
+Like the previous cases, we tried out basic JS DOM function on submit button. This worked like if we entered any value or not entered basically clicked on Submit button, so it should show some input into console. 
+To do this, we created a function in App() before the return block and then included that function calling/using that function with onSubmit parameter for the created form.
+
+this resulted the console log to appear on console but soon we realised that the page reloads very fast and it happens once we click on Submit button. 
+
+Here we try to understand Form-handling in React.
+
+To handle, we need to set the default behavior of a form according to our requirement.
+
+2-way binding in form-handling concept:
+--------------------------------------
+- In React, two-way binding can be implemented by using a state object in a component and updating its values through event handler functions bound to input elements. Each input element is mapped to an attribute of the state object, creating a binding effect that constantly updates the object as the user modifies the input.
+
+what I built?
+--------------
+A small sign-in page with parameters like Enter username, password and when clicked on submit, it console-logs the user-mail id as per what I learnt today. Pls find more info in the jsx code for 3rd July
