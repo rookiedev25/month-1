@@ -1,0 +1,41 @@
+Topics covered today:
+------------------
+Props drilling
+Props drilling is the process of passing data from a top-level component to deeply nested child components through intermediate components — even if those intermediaries don't need the data themselves.
+
+Why It's a Problem ?
+--------------------
+Becomes hard to manage when components are deeply nested.
+Intermediate components become cluttered with props they don't use.
+Makes components less reusable and tightly coupled.
+
+example code:
+function App() {
+  const user = "Gouranga";
+  return <Parent user={user} />;
+}
+
+function Parent({ user }) {
+  return <Child user={user} />;
+}
+
+function Child({ user }) {
+  return <GrandChild user={user} />;
+}
+
+function GrandChild({ user }) {
+  return <p>Hello, {user}!</p>;
+}
+ -- Here, user is passed from App → Parent → Child → GrandChild.
+Even though only GrandChild needs it, all others must pass it — this is props drilling.
+
+Note: Props drilling occurs when props are passed through multiple component layers unnecessarily, leading to less maintainable code. It's often resolved using React's Context API or state management libraries like Redux.
+
+Component Rendering
+----------------------
+Component rendering in React refers to the process by which React creates and updates the UI by calling the render function of a component to produce a virtual DOM representation, which is then compared to the previous version (via diffing) and applied to the actual DOM as needed.
+
+
+passing mock API data using Json array -- check dev05July.jsx code for more information
+
+
