@@ -1,0 +1,17 @@
+React Props
+--------------
+React Props are simply used for communication among componenets in React app. Component communication is a very essential feature that any framework based on component-driven design should have. 
+
+In a component-drive framework, every single unit of the UI is made up of components. Now, each of these componenets might need to communicate data among themselves.
+
+The Root component is the root of the component tree, it renders the components under it.
+
+This is a basic feature that helps us to send and receive data across the components and render them on the UI.
+
+React Components written as functions are known as Functional Components. While the ES6 components are known as Class Components. Functional components are basically JavaScript functions.
+
+
+Friday-Zing :D
+I was hungry after my day at work.
+
+After what I learnt, i thought to use this learning to make something interesting. see code-dev04July.jsx for more info
