@@ -1,0 +1,21 @@
+What is covered in this week:
+- What is React and why React
+- Installation , react-vite boilerplate
+- import and export components
+- React folder structure
+- Real DOM vs Virtual DOM
+- JSX files
+- useState hooks (variable of react)
+- Adding CSS - normally(index.css), and using tailwind-directly on components
+- Calling functions in react
+- Form Handling, preventDefault()
+- Two way Binding
+- components
+- props drilling
+- Rendering JSON Data
+
+
+today:
+AXIOS: This is a tool that is used to call APIs and get data from them to show on UI
+
+implementation for today, pls refer to the code in dev06July.jsx
