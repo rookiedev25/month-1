@@ -1,0 +1,2 @@
+Rendering lists in ReactJS, DietChart
+Building a Color picker app-- see more dev08July.jsx
