@@ -1,0 +1,14 @@
+React Router DOM: This is a package that provides routing capabilities for React applications, allowing developers to define multiple routes in a single-page application (SPA) and handle navigation between them seamlessly.
+ It builds upon the core React Router library by adding support for the browser's DOM (Document Object Model).
+
+To use React Router DOM, you typically install it in your project using npm, and then import the necessary components such as BrowserRouter, Route, and Link.
+ For example, you can set up your application by wrapping it with BrowserRouter and defining routes using the Route component.
+
+React Router DOM is particularly useful for building single-page applications where navigation between different pages or components occurs without reloading the entire web page.
+ It enables smooth transitions between different views and helps organize the app with features like dynamic routing and nested routes.
+
+In addition to basic routing, React Router DOM offers advanced features such as programmatic navigation using hooks like useNavigate and handling of unconfigured routes.
+ The NavLink component from React Router DOM is also used to create navigation links that can detect if a route is currently active, allowing for styled active links.
+
+
+ With Link tag in React-router-dom, we can route in between pages without actually reloading any page content or DOM elements. The html content inside the Link tag only updates as per set routes and rest of the page remains same.
