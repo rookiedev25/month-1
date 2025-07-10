@@ -1,0 +1,70 @@
+Why we need a hooks in react?
+------------------------------
+Hooks in React allow you to use state and other React features in functional components, which were previously only available in class components. Before hooks, if you wanted to use features like local state, lifecycle methods, or context, you had to use class components, which could become complex and harder to maintain. Hooks make it possible to use these features in simpler function components, leading to cleaner and more readable code.
+
+Additionally, hooks enable you to extract and reuse stateful logic across multiple components without changing their structure. This promotes better code reuse and separation of concerns, making your React applications easier to test and maintain.
+
+
+useEffect hook
+-------------------
+this tells REact to do some operations when:
+- component re-renders
+- components mounts
+- state of value updates
+
+format: 
+useEffect(function, [dependencies])
+
+/**
+ * React Hook: useEffect
+ *
+ * The `useEffect` hook lets you perform side effects in function components. Side effects can include data fetching, subscriptions, manually changing the DOM, and more.
+ *
+ * Usage:
+ * - `useEffect(effect, dependencies?)`
+ *   - `effect`: A function containing the side-effect logic. It can optionally return a cleanup function.
+ *   - `dependencies`: An optional array of values that the effect depends on. The effect will re-run whenever any dependency changes.
+ *
+ * Behavior:
+ * - By default, `useEffect` runs after every render.
+ * - If you provide a dependency array, the effect runs only when those dependencies change.
+ * - If you provide an empty array (`[]`), the effect runs only once after the initial render (componentDidMount).
+ * - If the effect returns a function, React will call it when the component unmounts or before re-running the effect (cleanup).
+ *
+ * Common use cases:
+ * - Fetching data from an API when the component mounts.
+ * - Setting up subscriptions or event listeners.
+ * - Cleaning up resources when the component unmounts.
+ *
+ * Example:
+ * ```jsx
+ * useEffect(() => {
+ *   // Side effect logic here
+ *   return () => {
+ *     // Cleanup logic here
+ *   };
+ * }, [dependency1, dependency2]);
+ * ```
+ *
+ * Notes:
+ * - Avoid causing infinite loops by ensuring dependencies are correctly specified.
+ * - Multiple `useEffect` hooks can be used in a single component.
+ * - For synchronous logic that must run before DOM mutations, consider `useLayoutEffect`.
+ */
+
+ what is Context-API (major solution to Props-drilling problem)
+ -----------------------------------------------------------------
+The Context API in React is a feature that allows you to share data (such as state, functions, or values) across the entire component tree without having to pass props down manually at every level (a problem known as "props drilling").
+
+Props drilling occurs when you need to pass data from a parent component to deeply nested child components, even if intermediate components do not need that data. This can make your code harder to maintain and understand.
+
+With the Context API, you can create a context object and use a Provider component to supply the data to any components that need it, regardless of their position in the component tree. Components that need the data can use the Consumer component or the `useContext` hook to access it.
+
+This approach simplifies state management for global or widely-used data, such as user authentication, themes, or language settings.
+
+This is used to centralize the data. Any component can use the data, doesn;t need to depend upon other belonging to hierarchies.
+
+Example usage:
+- websites that usage convert-translations of UI texts
+- to track user is authenticated or not
+- to manage and share state across components and not doing props drilling which is a bad practise in React
