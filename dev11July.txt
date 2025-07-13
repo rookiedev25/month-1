@@ -1,0 +1,22 @@
+What are GitHub Pages?
+------------------------
+GitHub Pages is a static site hosting service that allows users to host websites directly from a GitHub repository. It takes HTML, CSS, and JavaScript files from a repository on GitHub, optionally runs the files through a build process, and publishes a website.
+ GitHub Pages can be used to create websites for project documentation, online blogs, landing pages, and more.
+
+GitHub Pages is free of charge for every GitHub user and is available in public GitHub repositories with a GitHub Free account, plus available in public and private GitHub repositories with a GitHub Pro, GitHub Team, or GitHub Enterprise account.
+
+There are two types of GitHub Pages sites: user and organization sites, and project sites. User and organization sites must be stored in a repository named .github.io, where is the personal or organization account name. Project sites are stored in a folder within the repository that contains the project's code.
+
+GitHub Pages supports the use of custom domains as well as the change of the root URL to any sub-domain you own.
+ Additionally, GitHub Pages can be configured to deploy content from different branches or subdirectories of a repository.
+
+It is important to note that GitHub Pages does not support server-side languages such as PHP, Ruby, or Python. However, it does support static HTML, CSS, and JavaScript files, as well as Jekyll, a static site generator that converts Markdown files to HTML.
+
+
+How do I add React Projects into GitHub Pages:
+-----------------------------------------------
+Get to this page: https://create-react-app.dev/docs/deployment/
+and search for Github pages
+
+
+Please refer the code-file: dev11July.jsx for all code implementation for this TaskList project.
