@@ -1,0 +1,8 @@
+Today we learnt about how to create and add Login Authentication to React Applications:
+
+Started with building a login page
+Creating a Token API
+Configuring that token as per user-login state and verification with saved tokens
+
+rest can be found in the code, need to explore the behind the scenes. 
+Today was more focussed on preparing the best-fit UI and handling routes using states

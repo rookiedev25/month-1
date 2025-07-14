@@ -1,0 +1,19 @@
+Authentication Flow
+- Access tokens are stored in teact app;s state in memory, expire after 15minutes, and are sent with every request for server authentication.
+- Refresh tokens are stoerd securely on the server in HTTP-only cookies, inaccessible to JavaScript, and used to generate new access tijens for 30+Days for authentication
+- When the access token expires or is undefined, the server checks the refresh token to generate a new accesstoken, maintaining user authentication
+
+Security Measures:
+- Storting access tokens in memoty and refresh tokens in HTTP-only cookies provides a balance between security and convenience, 
+- The React Application is only responsible for the access token, while the server handles the refresh token, enhancing security.
+- The 15-minute expiration of access tokens and server-side storage of refresh tokens mitigate risks associates with token theft.
+
+Implementation details:
+- An Interceptor in the React application automatically adds the access token to every request sent to the server.
+- When an access token becomes invalid, the server returns a 403 forbidden response, prompting the React. app to use the refresh token for reauthentication.
+- The refresh process allows users to remain authenticated without frequent sign-outs, imporvin user experience.
+
+Best Practises:
+- Undestanding the mental model of authentication, including token storage locations and repsonsibilities, is crucual for implementing secure RTeact applications.
+- Separating access and refresh token handling between client and server creates a more robust authenctiation system,
+- Regular token refreshing and short-lived access tokens provide a balance betweenb security and user convenience in React applications
