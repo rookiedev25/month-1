@@ -1,0 +1,19 @@
+Key Learnings:
+
+✅ Type Safety – Why TypeScript shines in catching errors at compile time.
+
+✅ Setup & Basics – Installed TypeScript and wrote my first functions like findSum and sortArr.
+
+✅ The any Keyword – Understood how TypeScript handles any behind the scenes, when it sneaks in, and why explicitly typing parameters and return values avoids hidden bugs.
+
+✅ Functions in TS – Explored void (when functions return nothing) and never (error handling or unreachable code).
+
+✅ Objects – Passing objects as arguments and returning them with proper type annotations.
+
+✅ Type Aliases – Found this particularly interesting as it makes type management more flexible but also requires careful usage.
+
+
+
+📝 What’s Next?
+
+Tomorrow, I’ll dive into data structures like Arrays, Union, Enum, and Interface. I suspect I might get confused between Types vs Interfaces, so I’ll explore inheritance and real-world use cases to clear things up.
