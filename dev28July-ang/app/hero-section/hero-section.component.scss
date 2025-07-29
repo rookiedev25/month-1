@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .hero-container{
+    // background-color: red;
+    position: absolute;
+    border-bottom: 1px solid #222;
+    width: 80%;
+    margin-top: 80px;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    h1{
+        font-size: 55px;
+        width: 900px;
+        text-align: center;
+    }
+    p{
+        font-size: 20px;
+        color: grey;
+    }
+    .clickRephrase{
+        width: 150px;
+        font-size: 18px;
+        margin-top: 1rem;
+        padding:10px;
+        border-radius: 12px;
+        border: none;
+        background-color: #1e88e5;
+        color: white;
+    }
+    .clickRephrase:hover{
+        background: #135895;
+        cursor:pointer
+    }
+}}

@@ -1,0 +1,95 @@
+Angular JS
+--------------
+- This is a javascript framework that is used for Web-development
+- This helps to build single-page-applications -- page doesn't refresh on interaction
+- Multiple refresh/load time makes application slow -- these are multi-page applications
+- This is developed by Google
+- Node installation is essential for development
+- Based on Model-View-Controller Architecture
+- Angular JS(deprecated) vs Angular are different
+- Current Angular version is 19
+
+Why Angular:
+------------
+- Fast Loading
+- Fast development
+- Provides a lots of geatures :
+    - Validation Library
+    - Routing
+    - Component Based structure
+- Large Community
+
+Angular Core Concepts:
+-----------------------
+- Components, Services
+- Directives, Pipes
+- Data-Binding, Event hanadlers
+- Http Module, Forms 
+- Module- Routing, Animations
+- Testing, Building for Production
+
+StandAlone vs NGmodule - angular projects
+
+important-files
+app.component.ts -- this contains a decorator @Component
+app.component.html
+app.component.scss
+
+global files - 
+index.html
+main.ts
+styles.scss
+
+
+Getting started with Installation: (make sure we have node-installed in system)
+------------------------------------
+install Angular globally on your machine:
+`npm install -g @angular/cli`
+
+checking angular version:
+`ng version`
+
+creating new-project:
+`ng new <project-name>`
+
+start-project/app:
+`ng serve -o` // this opens the localhost-with port directly into the browser
+
+
+
+main.ts > appConfig.ts > appComponent renders
+
+
+More about files:
+-------------------
+export-keyword for a class component: using this keyword helps us to make the component publically available to be called/included into any other part of the code/import any other place in the code
+
+Like if we have some component such as Header and we have exported this, then we can use this in our App.component.ts using import statement
+
+folder-structure
+-------------------
+very-important:
+- package.json: This file has all the details about the project such as angular-version, typescript-version, script-versions, dependencies: devDependencies, dependencies and other required information. here we can add more features using npm-command. 
+
+- tsconfig.json: In Angular, we use TS. This file is used to set configurations for TS. For example, we can set the output directory of the ts-files to be stored, then there are strict mode- which enables some warnings while coding, also there are properties with Echema script target what to use in the project
+
+- tsconfig.app.json: only configures files under src-folder.
+
+- tsconfig.spec.json: used to configure the test-cases for Angular Application
+
+- readme.md: add information about the project, just a normal readme
+
+- package-lock.json: This basically contain configuration information about the packages that are installed while creating the application when we run `ng new app-name` similar to what we have in package.json file. But this is different as this only contain defined properties which should not be updated/locked/un-changed on further npm install commands.
+
+- angular.json: this will carry the configuration with project such as directory information for scource paths, root paths, index-file, typescript files, styles- global, local, app-component
+
+- .gitIgnore: has a list of files that should be ignored while pushing this into some repo
+
+getting inside src-folder:
+
+- index.html: this is the entry point of the application
+
+- main.ts: this is the entry point for typescript file for the project. This also tells which component is to be loaded
+
+- styles.scss: global styles
+

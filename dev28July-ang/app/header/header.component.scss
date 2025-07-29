@@ -1,0 +1,46 @@
+nav{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #1e88e5;
+    color: white;
+    height: 5rem;
+
+    .logo{
+        // border: 2px solid red;
+        height: fit-content;
+        font-size: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        font-size: 25px;
+        gap: 1px;
+        span{
+            font-weight: 100;
+            font-style: italic;
+        }
+        p{
+            font-weight: 800;
+        }
+    }
+
+    .list{
+        // border: 2px solid red;
+        width: fit-content;
+        font-size: 18px;
+        ul{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        li:hover{
+            cursor: pointer;
+            font-weight: bold;
+            transition: ease-in-out 100ms;
+        }
+    }
+
+}

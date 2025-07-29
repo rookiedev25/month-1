@@ -1,0 +1,57 @@
+Interpolation in Angular:
+--------------------------
+- This is used to show the dynamic data including results from calculated values from JS into HTML-format to render onto the display.
+
+- We can use interpolation to directly show some data on UI, can be done with displaying string, numeric values.
+
+- In case of strings, we can use `string-methods` to actually tweak required display on screen
+
+- There are some limitations in this:
+    - You cannot show/render any operations such as increment/decrement for a single value
+    - assigning values to any variables declared is not allowed, that throws error
+
+
+Understanding Angular CLI:
+---------------------------
+- What is angular CLI: 
+This is a tool that helps to develop our web-applications using terminal. Starting from creating component, directives, we can directly create those using terminal itself. Commands help us to develop Angular Application
+
+- How to find all commands - documentations
+ng version : shows current installed Angular version
+ng help : gets all the commands supported for that angular version acting as a guide
+more on documentations - angular.dev 
+
+Components in Angular:
+-----------------------
+What are Components in Angular
+- Components are the basic building blocks of an Angular application. They control a part of the user interface, define its logic, and manage its data. Each component consists of a TypeScript class, an HTML template, and optional CSS styles.
+
+How to make Components
+- ng generate component `component-name`
+
+
+Files in a component-folder
+----------------------------
+componentname.component.ts
+componentname.component.html
+componentname.component.scss
+componentname.component.spec.ts
+
+How to get your component rendered onto main-app:
+-------------------------------------------------
+- add it's Component-selector into app.component.html file 
+- add the component-name as Export-classname into app.component.ts into imports:[`place-here`]
+
+Custom Components in Angular:
+------------------------------
+These are the components that are create without angular-command.
+This helps to eliminate some files that are not required for that component, but can be time-consuming
+Decorator: @Component 
+add selector: '<add here name>' -- this can again be added into app.component.html 
+template: 'html-code'
+
+Functions and button-click
+- making button
+- defining a Functions
+- calling functions on button-click
+- calling functions from other functions

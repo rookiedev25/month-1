@@ -1,0 +1,27 @@
+.card{
+    background-color: grey;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: fit-content;
+
+    h2{
+        color: white;
+        font-family: sans-serif;
+        margin: 2px;
+    }
+    h3{
+        color: white;
+        font-family: sans-serif;
+        font-style: normal;
+        margin-top: 2px;
+    }
+    p{
+        margin-top: 0px;
+    }
+}
+body{
+    font-family: sans-serif;
+}
