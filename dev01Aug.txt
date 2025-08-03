@@ -1,0 +1,235 @@
+- Implementation of For-loops to show list of elements or access elements from a Object/array of object. This was done using NgModule - ngFor statement plain and simple.
+
+array of objects mentioned in ts:
+---------------------------------
+ cart = [
+    {
+      id: '1',
+      item: 'Milk',
+      quantity: 10,
+    },
+    {
+      id: '2',
+      item: 'Oats',
+      quantity: '2kg',
+    },
+    {
+      id: '3',
+      item: 'Protein powder',
+      quantity: '1kg',
+    },
+    {
+      id: '4',
+      item: 'Eggs',
+      quantity: 24,
+    },
+  ];
+html-code:
+------------
+<div class="container"
+    style="width: fit-content; height: fit-content; border: 2px solid #999; padding: 10px; display: flex; flex-direction: row; gap: 4rem;">
+    <div class="leftCol">
+        <h3 style="border-bottom: 1px solid #999;">Items</h3>
+        <h3 *ngFor="let e of cart">{{e.item}}</h3>
+    </div>
+    <div class="rightCol">
+        <h3 style="border-bottom: 1px solid #999;">Quantity</h3>
+        <h3 *ngFor="let q of cart">{{q.quantity}}</h3>
+    </div>
+</div>
+
+
+Events in Angular
+------------------
+- Making a function
+- Call function on click
+- Call function on input-field, focus, blur
+- Mouse Events
+- Check Event-type
+
+html-code:
+<p style="margin-bottom: 20px;">playground works!</p>
+
+<h1 style="margin-bottom: 10px; border-bottom: 1px solid #999;">Events in Angular</h1>
+<span style="margin-top: 20px;">Below are use-cases:</span>
+<span style="margin-left: 20px;">You have pressed {{eventName}} event</span>
+
+<!-- ? Button click event -->
+<div class="playContainer" style="border: 1px solid #999; padding: 10px; width: fit-content; margin-top: 10px;">
+    <button style="padding: 10px 20px; 
+    background-color: #007bff; 
+    color: #fff; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer;" (click)="handleClickEvent($event)">Click Me FAST AF</button>
+</div>
+
+<!-- ? Mouse Enter -->
+<div class="playContainer" style="border: 1px solid #999; padding: 10px; width: fit-content; margin-top: 10px; display: flex; flex-direction: row; gap: 10px; align-items: center;">
+    <div class="boxMouseHover"
+    style="width: 100px; height: 100px; background-color: greenyellow;"
+    (mouseenter)="handleClickEvent($event)"
+    ></div>
+</div>
+
+<!-- ? MouseLeave -->
+<div class="playContainer" style="border: 1px solid #999; padding: 10px; width: fit-content; margin-top: 10px; display: flex; flex-direction: row; gap: 10px; align-items: center;">
+    <div class="boxMouseHover"
+    style="width: 100px; height: 100px; background-color: darkred;"
+    (mouseleave)="handleClickEvent($event)"
+    ></div>
+</div>
+
+<!-- ? Input field focus -->
+<div class="playContainer" style="border: 1px solid #999; padding: 10px; width: fit-content; margin-top: 10px; display: flex; flex-direction: row; gap: 10px; align-items: center;">
+    <input class="boxMouseHover"
+    style="width: 200px; height: 40px; background-color: rgb(255, 255, 255);"
+    (focus)="handleClickEvent($event)"
+    placeholder="enter text"
+    />
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+? For loop implementation in Angular
+<div class="container"
+    style="width: fit-content; height: fit-content; border: 2px solid #999; padding: 10px; display: flex; flex-direction: row; gap: 4rem;">
+    <div class="leftCol">
+        <h3 style="border-bottom: 1px solid #999;">Items</h3>
+        <h3 *ngFor="let e of cart">{{e.item}}</h3>
+    </div>
+    <div class="rightCol">
+        <h3 style="border-bottom: 1px solid #999;">Quantity</h3>
+        <h3 *ngFor="let q of cart">{{q.quantity}}</h3>
+    </div>
+</div> -->
+
+<!-- 
+? Understanding Switch case in Angular:
+-------------------------------------
+<div style="margin-top: 30px;">
+    <h2 style="margin-bottom: 10px; border-bottom: 1px solid #999; width: 200px; padding: 12px 15px; text-align: center;">Coffee Menu</h2>
+    <div style="display: flex; gap: 15px; justify-content: center; flex-direction: column; width: 250px;">
+        <button style="padding: 10px 20px; background: #6f4e37; color: #fff; border: none; border-radius: 5px; cursor: pointer;" (click)="orderCoffee('Espresso')">Espresso</button>
+        <button style="padding: 10px 20px; background: #c2b280; color: #fff; border: none; border-radius: 5px; cursor: pointer;" (click)="orderCoffee('Latte')">Latte</button>
+        <button style="padding: 10px 20px; background: #b5651d; color: #fff; border: none; border-radius: 5px; cursor: pointer;" (click)="orderCoffee('Cappuccino')">Cappuccino</button>
+        <button style="padding: 10px 20px; background: #4b3832; color: #fff; border: none; border-radius: 5px; cursor: pointer;" (click)="orderCoffee('Americano')">Americano</button>
+        <button style="padding: 10px 20px; background: #a67b5b; color: #fff; border: none; border-radius: 5px; cursor: pointer;" (click)="orderCoffee('Mocha')">Mocha</button>
+    </div>
+    <div *ngIf="coffee" style="margin-top: 20px; font-size: 18px; color: #ded5ce;">
+        @switch(coffee){
+            @case('Espresso'){
+                Your for <strong>{{coffee}}</strong> is ready!
+            }@case('Latte'){
+                Your for <strong>{{coffee}}</strong> is ready!
+            }@case('Cappuccino'){
+                Your for <strong>{{coffee}}</strong> is ready!
+            }@case('Americano'){
+                Your for <strong>{{coffee}}</strong> is ready!
+            }@case('Mocha'){
+                Your for <strong>{{coffee}}</strong> is ready!
+            }
+        
+        }
+    </div>
+</div> -->
+
+<!-- 
+? Understanding if-else statements and its Implmentation:
+-------------------------------------------------------
+<p
+style="background: #fffbe6; border-left: 4px solid #ffe58f; padding: 10px; font-style: italic; color: black; margin-top: 20px;"
+>Below box is using only one if-condition along with a function that adjusts the behavior based on button click event</p>
+@if(displayBox){
+<div class="container" 
+style="
+    height: 200px;
+    width: 200px;
+    background-color: #290;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+">
+<h1>BOX</h1>
+</div>}
+
+<button
+style="
+    padding: 10px 20px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+    margin-top: 20px;
+"
+(click)="toggleBox()"
+>{{buttonLabelBox}}</button>
+
+
+<p
+    style="background: #fffbe6; border-left: 4px solid #ffe58f; padding: 10px; font-style: italic; color: black; margin-top: 20px;">
+    Below example is using only if-else condition which changes behavior of a div-element
+</p>
+
+@if(displayDiv){
+    <div class="container" style="
+            height: 200px;
+            width: 200px;
+            background-color: rgb(153, 0, 0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        ">
+        <h1>DIV</h1>
+        </div>
+}
+@else{
+    <div class="container" style="
+        height: 200px;
+        width: 200px;
+        background-color: rgb(0, 87, 153);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    ">
+        <h1>DIV</h1>
+    </div>
+}
+<button style="
+    padding: 10px 20px;
+    background-color: rgb(255, 196, 0);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+    margin-top: 20px;
+" (click)="toggleDiv()">{{buttonLabelDiv}}</button> -->
+
+ts-code:
+---------
+  eventName = "______"
+  handleClickEvent(event: Event){
+    this.eventName = event.type;
+  }

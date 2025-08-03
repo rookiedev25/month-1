@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="nav">
+        <h1>Counter App</h1>
+    </div>
+    <div class="displayCount" style="color: white;">
+        <!-- Count = {{count}} interpolation--> 
+         Count = {{count}}
+    </div>
+    <div class="button-grp">
+        <button style="background-color: green; color: white;" (click)="operate('add')">Increment</button>
+        <button style="background-color: red; color: white;" (click)="operate('substract')">Decrement</button>
+        <button (click)="operate('reset')">Reset</button>
+    </div>
+
+</div>

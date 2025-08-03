@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    .nav {
+        background-color: white;
+        color: black;
+        height: 7vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .displayCount{
+        border: 2px solid yellow;
+        width: fit-content;
+        padding: 10px;
+        font-size: x-large;
+
+    }
+    .button-grp{
+        border: 1px solid #777;
+        padding: 20px;
+        border-radius: 12px;
+        height: 10vh;
+        margin-top: 100px;
+        display: flex;
+        gap: 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        button{
+            padding: 10px;
+            font-size: x-large;
+            border-radius: 8px;
+            border: none
+        }
+        button:hover{
+            cursor:pointer;
+            border: 1px solid gold;
+        }
+    }
+}

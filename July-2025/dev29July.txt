@@ -1,0 +1,12 @@
+Defining types - basic typescript requirements (already covered in TS) 
+property - these are part of the class/members of a class
+
+Property vs Variables:
+properties are defined in classes to store data, and variables can be defined in general inside function-scope but not inside class directly
+
+Multiple type to property
+In cases where we have multiple type of data that can be stored in the variable, in those cases we can use Unions 
+
+Making a counter app
+
+How to get and set values with input fields

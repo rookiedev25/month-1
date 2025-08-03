@@ -1,0 +1,19 @@
+Switch case statements for multiple conditions
+----------------------------------------------
+we use switch statements when we have more than 2 conditions to check for a fixed value.
+We can use Directives in this case such as:
+@switch(Object: object){
+    @case(condition1){
+        //code
+    }
+    @case(condition2){
+        //code
+    }@case(condition3){
+        //code
+    }@case(condition4){
+        //code
+    }
+    @default{
+        // code
+    }
+}

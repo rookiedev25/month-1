@@ -1,0 +1,69 @@
+Decorators: 
+-------------
+- These are special functions that attach metadata to classes, methods, properties, or parameters. 
+- They inform Angular how to process and use those elements during runtime and compilation.
+
+| Decorator Type  | Used On        | Purpose                                                              |
+| --------------- | -------------- | -------------------------------------------------------------------- |
+| `@Component`    | Class          | Declares a component with selector, template, style, etc.            |
+| `@Directive`    | Class          | Declares a directive that can change DOM behavior/appearance         |
+| `@Injectable`   | Class          | Marks a class as available for dependency injection                  |
+| `@Input`        | Class property | Allows a parent component to pass data to a child component          |
+| `@Output`       | Class property | Enables a child component to send data/events to the parent          |
+| `@HostListener` | Method         | Listens to host element events like clicks or hovers                 |
+| `@HostBinding`  | Property       | Binds a property to a host element attribute or class                |
+| `@NgModule`     | Class          | Defines a module and its metadata (declarations, imports, providers) |
+
+example: class type decorator shows this is a component
+@Component({
+  selector: 'app-user',
+  template: `<p>{{ name }}</p>`
+})
+export class UserComponent {
+  @Input() name: string = '';
+}
+
+Decorators are like a notation to Angular saying how things should work while runtime
+
+
+Directives:
+-------------
+- These are special classes that allow you to manipulate the DOM structure or behavior of elements. 
+- They extend HTML by adding custom behavior to elements and components.
+
+| Type                     | Purpose                                                                         |
+| ------------------------ | ------------------------------------------------------------------------------- |
+| **Component**            | Technically a directive with a template (`@Component`)                          |
+| **Structural Directive** | Alters layout by adding/removing DOM elements (*e.g.*, `*ngIf`, `*ngFor`)       |
+| **Attribute Directive**  | Changes the appearance or behavior of an element (*e.g.*, `ngClass`, `ngStyle`) |
+
+Built-in Structural Directives:
+-------------------------------
+*ngIf: Conditionally includes a template
+*ngFor: Iterates over a collection
+*ngSwitch: Switch-case logic for templates
+
+Built-in Attribute Directives:
+------------------------------
+ngClass: Adds/removes CSS classes dynamically
+ngStyle: Sets styles dynamically
+ngModel: Two-way data binding for forms
+
+Custom Directives Eg:
+@Directive({
+  selector: '[appHighlight]'
+})
+export class HighlightDirective {
+  constructor(el: ElementRef) {
+    el.nativeElement.style.backgroundColor = 'yellow';
+  }
+}
+
+html-component:
+<p appHighlight>Highlight me!</p>
+
+IfElse in Angular, Hide/Show Toggle
+- defining property and html for IfElse conditions
+- apply if else conditions
+- hide/show button click 
+- update button text when clicked/toggle 

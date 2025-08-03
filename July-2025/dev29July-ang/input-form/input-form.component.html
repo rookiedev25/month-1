@@ -1,0 +1,21 @@
+<div class="formContainer">
+    <div class="nav">
+        <h1>InputForm</h1>
+    </div>
+    <form action="">
+        <div class="label-group">
+            <input type="text" name="username" placeholder="username"
+            (input)="getUserName($event)" value="{{username}}"
+            #usernameTemplate
+            >
+        </div>
+        <div class="label-group">
+            <input type="password" name="password" placeholder="password">
+        </div>
+        <button class="submit" (click)="getUserNameWithTemplate(usernameTemplate.value, $event)">Login</button>
+    </form>
+
+    <div class="message">
+        <p>Logged in User: {{username}}</p>
+    </div>
+</div>

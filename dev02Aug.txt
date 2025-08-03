@@ -1,0 +1,53 @@
+What are Signals - 
+- Signals are a reactivity primitive introduced in Angular to better manage reactive state in a more fine-grained and predictable way.
+- This acts like a wrapper around a value that can be tracked, and when the value changes, the view updates automatically.
+- These are more powerful than properties or values
+
+Types of Signals
+-Writable signals
+-Computed signals
+
+
+Defining Signals 
+-----------------
+import { signal } from '@angular/core';
+
+export class MyComponent {
+  count = signal(0);
+
+  increment() {
+    this.count.set(this.count() + 1);
+    console.log(this.count)
+  }
+}
+
+when set this increment() to a button-click, we can update this count based on that click.
+This can be verified using console log statement with required number of clicks and outcomes
+
+Use-cases for Signals in real-world:
+------------------------------------
+- UI State Management
+Like toggling modal visibility, counter values, etc., without requiring Observables or external libraries.
+
+- Form Field Interactions
+Re-render parts of the UI when specific form values change.
+
+- Dynamic Theme Switching
+Signal can be used to track theme preference (dark / light) and re-render relevant parts.
+
+- Component Communication
+In smaller apps, signals can manage shared state across sibling components more simply than RxJS.
+
+Similar concepts in React vs Angular:
+| Concept               | Angular Signals        | React                    |
+| --------------------- | ---------------------- | ------------------------ |
+| State creation        | `signal(initialValue)` | `useState(initialValue)` |
+| Get value             | `signal()`             | variable directly        |
+| Set value             | `signal.set(newValue)` | `setState(newValue)`     |
+| Reactive re-rendering | Yes                    | Yes                      |
+| Used in template      | Directly in HTML       | In JSX                   |
+
+NOTE: Angular's signals also track dependencies reactively, making it more like a combination of useState + useMemo + useEffect.
+
+In summary: 
+Signals are Angular's new primitive for reactive state, similar to React's useState. They're used to hold and update stateful values and trigger UI updates when the value changes. They're particularly useful in managing fine-grained UI updates, component state, or form interactions in a declarative and simple manner.

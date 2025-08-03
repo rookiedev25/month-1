@@ -1,7 +1,7 @@
 
 // Child Component written in different file
 import React from 'react'
-import App from './App'
+import App from './dev28July-ang/app'
 
 const ProductCatalogue = (product) => {
   return (
