@@ -1,0 +1,67 @@
+Data Binding in Angular:
+---------------------------
+<h1>One way Data Binding</h1>
+<!-- using interpolation and property binding -->
+<div style="padding: 10px;">
+    <h2>Using Interpolation</h2>
+    <div class="innerContainer" style="padding:2px; border: 2px solid #999; height: 10vh; width: fit-content; margin-bottom: 20px;">
+        <h4>{{courseName}}</h4>
+        <input type="text" value="{{courseName}}" placeholder="Enter text here">
+        <input type="{{inputType}}">
+    </div>
+
+    <h2>Using Property Binding</h2>
+    <div class="innerContainer"
+        style="padding:2px; border: 2px solid #999; height: 10vh; width: fit-content; margin-bottom: 20px;">
+        <input type="text" [value]="courseName" placeholder="Enter text here">
+        <input [type]="inputType">
+    </div>
+</div>
+<!-- using events to send data from .html to .ts -->
+<div style="padding: 10px;">
+    <h2>Using Events</h2>
+    <div class="innerContainer"
+        style="padding:2px; border: 2px solid #999; height: 10vh; width: fit-content; margin-bottom: 20px;">
+       <button (click)="showAlertBox('button-clicked')">Click me</button>
+    </div>
+
+</div>
+
+<h1>Two way Data Binding using ngModel </h1>
+<div class="containerInterpolation" style="padding: 10px;">
+    <h2>Using Buttons to update Course-content using a method</h2>
+    <div class="innerContainer"
+        style="padding:2px; border: 2px solid #999; height: 10vh; width: fit-content; margin-bottom: 20px;">
+        <button (click)="updateCourseName('ReactJS')">Click me</button>
+    </div>
+</div>
+<div style="padding: 10px;">
+    <h2>Using Buttons to update Course-content using a method</h2>
+    <div class="innerContainer"
+        style="padding:2px; border: 2px solid #999; height: 10vh; width: fit-content; margin-bottom: 20px;">
+        <!-- for input elements: [(ngModel)]="binding" -->
+        <input type="text" [(ngModel)]="courseName"/> - {{courseName}}
+
+        <input type="checkbox" [(ngModel)]="isChecked"/>
+
+        <!-- for select-options element, pass the value of variable that we need to be selected by-default -->
+         <select name="selection" id="" [(ngModel)]="dropdownSelection">
+            <option value="Select">Select</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JS</option>
+            <option value="ReactJS">ReactJS</option>
+         </select>
+    </div>
+</div>
+<div style="padding: 10px;">
+    <h2>Using Signals</h2>
+    <div class="innerContainer"
+        style="padding:2px; border: 2px solid #999; height: 10vh; width: fit-content; margin-bottom: 20px;">
+       <!-- using Signal -->
+        <h3>{{learningModule()}}</h3>
+        <button (click)="updateLearningModule('Angular')">Click to change Learning Module Name</button>
+    </div>
+</div>
+
+

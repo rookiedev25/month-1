@@ -1,0 +1,18 @@
+Life Cycle events:
+-----------------
+These are some methods that are called in the complete cycle of a component being created and destroyed
+
+Below is the life-cycle:
+1. Creation
+2. Initialization
+3. Change detection
+4. Rendering
+5. Update (on data change)
+6. Destruction (when removed)
+
+ngOnChanges() - called when an @Input() property value changes
+ngOnInit() - called once after component Initialization
+ngDoCheck() - detect and act upon changes manually
+ngAfterContentInit() - called after content projected using <ng-content> has been initialized
+ngAfterViewInit() - called after every check of component's view 
+ngOnDestroy() - cleanup just before Angular destoys the component

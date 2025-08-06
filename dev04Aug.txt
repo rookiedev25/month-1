@@ -1,0 +1,73 @@
+Directives in Angular:
+deprecated:
+*ngIf
+*ngFor
+
+Structural Directives:
+- ngClass: helps to add dynamic class to html elements
+<div class="row">
+    <div class="col-3" [ngClass]="controlDivWithClassName()">
+        <div class="p-3">Div-1 {{controlDivWithClassName()}}</div>
+    </div>
+</div>
+<div class="row"><div class="col-3">
+    <button type="button" class="btn btn-danger" (click)="setBackgroundClass('bg-danger')">
+        set-div-to-danger
+    </button>
+    <button type="button" class="btn btn-success" (click)="setBackgroundClass('bg-primary')">
+        set-div-to-success
+    </button>
+</div></div>
+
+export class DirectivesComponent {
+  //creating a new signal property
+  controlDivWithClassName = signal<string>('');
+
+  //function to use the buttons and reflect updates on screen
+  setBackgroundClass(className: string) {
+    this.controlDivWithClassName.set(className)
+  }
+
+}
+
+- ngStyle: helps to add dynamic CSS
+<div class="row">
+    <div class="col-3" [ngClass]="controlDivWithClassName()">
+        <div class="p-3">Div-1 {{controlDivWithClassName()}}</div>
+    </div>
+    <div class="col-3" [ngStyle]="{'border': myBorder == true ? '2px solid blue' : '2px solid green'}">
+        <div class="p-3">Div-2 {{controlDivWithClassName()}}</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button type="button" class="btn btn-danger" (click)="setBackgroundClass('bg-danger')">
+            set-div-to-danger
+        </button>
+        <button type="button" class="btn btn-success" (click)="setBackgroundClass('bg-primary')">
+            set-div-to-success
+        </button>
+    </div>
+
+    <div class="col-3">
+        <button type="button" class="btn btn-info" (click)="addBorder('2px solid blue')">
+            click to update div2
+        </button>
+        
+    </div>
+</div>
+ myBorder :boolean = false
+  styleApply = signal<string>('')
+
+  //function to use the buttons and reflect updates on screen
+  setBackgroundClass(className: string) {
+    this.controlDivWithClassName.set(className)
+  }
+
+  addBorder(myStyle: string) {
+    this.myBorder = ! this.myBorder
+    this.styleApply.set(myStyle);
+  }
+
+- ngModel
+
