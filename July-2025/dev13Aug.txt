@@ -1,0 +1,29 @@
+1. Header-routing 
+
+This was already made few days back while I was doing handson based on learnings from the Routing-module in angular. Today, i got to learn a new thing about routes to make them strict and follow certain active-styles after clicking.
+
+Below is an example of a link:
+------------------------------
+<li>
+        <a [routerLink]="['/']" routerLinkActive="router-link-active"
+        [routerLinkActiveOptions]="{exact: true}">Home</a>
+</li>
+
+here the proprety routerLinkActiveOptions helps to mark that component as strictly following the particular route. In our case, this component was loaded as part of home-route with only ["/"] so this appears in all other route-paths. to make it strict, we use this.
+
+
+2. Wild-card routing / handling 404 pages
+
+  // wild card routing:
+  // works with a syntax below: 
+  {
+    path: "**", // if the user-enterd route is not available in the above listed routes, then load this page for those false-routes.
+    component: PagenotfoundComponent
+  }
+
+3. Pass data form one page to other
+
+possible ways:
+- routerLink 
+- button click 
+- router 

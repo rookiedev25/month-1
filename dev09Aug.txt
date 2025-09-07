@@ -1,0 +1,92 @@
+Today we covered about creating Reactiveforms and doing some validation for text-fields, getting data to send to API as request
+
+component.ts:
+---------------
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-reactiveforms',
+  imports: [ReactiveFormsModule],
+  templateUrl: './reactiveforms.component.html',
+  styleUrl: './reactiveforms.component.scss'
+})
+export class ReactiveformsComponent {
+  userForm: FormGroup = new FormGroup({
+    // form controls provided
+    email: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    fullName: new FormControl('', [Validators.required]),
+    phoneNumber: new FormControl(+91, [Validators.required, Validators.maxLength(12)]),
+    dob: new FormControl(),
+    gender: new FormControl("defaultPlaceholder")
+  })
+
+  onUserSave() {
+    const formData = this.userForm.value;
+    
+  }
+
+  constructor() {
+    this.userForm.controls['gender'].disable()
+
+    //enable after 3 secs
+    setTimeout(() => {
+      this.userForm.controls['gender'].enable()
+    }, 3000)
+  }
+}
+
+component.html
+----------------
+<div class="container">
+    <form [formGroup]="userForm" (ngSubmit)="onUserSave()">
+        
+        <!-- <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" formControlName="email" id="exampleInputEmail1" placeholder="Enter email">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1"  formControlName="password" placeholder="Password">
+        </div> -->
+        <div class="mb-3">
+            <label for="exampleInputName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="exampleInputName" placeholder="Enter your name" formControlName="fullName">
+            <div class="text-danger">
+                @if(userForm.controls['fullName'].errors?.['required'] && userForm.controls['fullName'].touched){
+                <span class="text-danger">this field is required</span>
+                }
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPhone" class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="exampleInputPhone" placeholder="Enter phone number" formControlName="phoneNumber">
+            @if(userForm.controls['phoneNumber'].touched){
+                <div class="text-danger">
+                    @if(userForm.controls['phoneNumber'].errors?.['required']){
+                        <span>This is required field</span>
+                    }
+                    @if(userForm.controls['phoneNumber'].errors?.['maxlength']){
+                    <span>Enter valid phone number</span>
+                    }
+                </div>
+
+            }
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputDOB" class="form-label">Date of Birth</label>
+            <input type="date" class="form-control" id="exampleInputDOB" formControlName="dob">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputGender" class="form-label">Gender</label>
+            <select class="form-select" id="exampleInputGender" formControlName="gender">
+                <option selected disabled value="defaultPlaceholder">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>

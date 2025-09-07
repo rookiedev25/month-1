@@ -1,0 +1,74 @@
+Pipes in Angular:
+------------------
+In Angular, Pipes are a way to transform data before displaying it in the template — without changing the actual data in your component.
+
+Think of them as little formatting tools you can attach directly in your HTML.
+
+Why are Pipes used?
+To format data for the UI without writing extra code in the component.
+
+To keep templates clean and readable instead of doing transformations inside HTML.
+
+To reuse the same transformation logic in multiple places.
+
+How they work
+In HTML, you use the | (pipe) operator:
+
+html
+Copy
+Edit
+{{ value | pipeName }}
+The value on the left is input data.
+
+The pipe on the right transforms it for display.
+
+Built-in examples
+Angular already provides some pipes:
+
+date → Formats dates
+
+currency → Formats a number as currency
+
+uppercase / lowercase → Changes letter casing
+
+json → Pretty-prints an object as JSON
+
+percent → Formats a number as a percentage
+
+Example:
+
+html
+Copy
+Edit
+<p>Today's date: {{ today | date:'fullDate' }}</p>
+<p>Price: {{ 250 | currency:'INR' }}</p>
+<p>{{ 'hello world' | uppercase }}</p>
+Real-life example / Scenario
+Imagine you’re building a food delivery app (like Swiggy/Zomato) in Angular.
+Your API returns restaurant delivery time in minutes:
+
+typescript
+Copy
+Edit
+deliveryTime = 18;
+Instead of showing 18 in your template, you want "18 mins" every time.
+You could create a custom pipe:
+
+typescript
+Copy
+Edit
+import { Pipe, PipeTransform } from '@angular/core';
+
+@Pipe({ name: 'minutesFormat' })
+export class MinutesFormatPipe implements PipeTransform {
+  transform(value: number): string {
+    return `${value} mins`;
+  }
+}
+And then use it in your template:
+
+html
+Copy
+Edit
+<p>ETA: {{ deliveryTime | minutesFormat }}</p>
+✅ This way, you don’t have to manually add "mins" everywhere in your HTML — the pipe does it for you.

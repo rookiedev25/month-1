@@ -1,0 +1,56 @@
+HandsOn  - routing
+---------------------
+1. create routes in app.routes.ts
+export const routes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+  },
+  {
+    path: 'support',
+    component: SupportpageComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+  },
+  {
+    path: '',
+    component: LandingPageComponent
+  }
+];
+
+2. we make changes in app-component, just like we do in app.jsx marking all the routes at one place, here as well we do a similar approach. Rather than specifying the routes in this html file, we already have mentioned those in the above ts file. so here only we need to keep the router-outlet tag in the html file in order to work with routing
+
+<app-navbar></app-navbar>
+<router-outlet></router-outlet>
+<footer style="
+    background: #222;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.08);
+    margin-top: 40px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    ">
+    &copy; 2024 Your Company Name. All rights reserved.
+</footer>
+
+3. Setting up routing in Navbar component
+Use RouterLink in all the links and provide the same path starting with a '/' 
+Make sure you add router-outlet in this component as well.
+
+also this needs to be part of the imports- 
+  imports: [RouterOutlet, RouterLink]
+
+
+4. Setting the home-page content.
+For this we already prepared a component and set that to the empty-path route in the above ts file.
+
+Now we are ready with all the routes working from the empty page route that is the home page to all the routing that we have mentioned in the navbar itself works fine. all pages reload/load to the selected route element.
+
+

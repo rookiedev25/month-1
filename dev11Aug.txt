@@ -1,0 +1,80 @@
+Today was learning about APIs and their integration.
+Started with GET API, below are some code:
+
+get-api-component.html file
+---------------------------
+<div class="container" style="
+    min-height: 60px;
+    width: 30vw;
+    /* border: 2px solid black; */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 30px;
+    position: relative;
+    top: 0; left: 0; bottom: 0; right: 0;
+">
+    <button (click)="getUsers()">GET ALL USERS</button>
+</div>
+<h2 style="text-align: center; margin-bottom: 10px;">Contacts below</h2>
+<div class="userDataContainer"
+style="
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-column: 1;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    border: 1px solid #222;
+    padding: 6px;
+
+">
+
+    @for(item of userList; track $index){
+    <div class="user-Card" style="
+                width: 35vw;
+                border: 1px solid #999;
+                border-radius: 10px;
+                padding: 5px;
+            ">
+        <!-- <p>{{$index+1}}</p> -->
+        <p>Name: {{item.name}}</p>
+        <p>Username: {{item.usename}}</p>
+        <p>Email: {{item.email}}</p>
+        <p>Phone: {{item.phone}}</p>
+        <p>Website: {{item.website}}</p>
+    </div>
+
+
+    }
+</div>
+
+get-api-component.ts file:
+--------------------------
+import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-getapi',
+  imports: [],
+  templateUrl: './getapi.component.html',
+  styleUrl: './getapi.component.scss'
+})
+export class GetapiComponent {
+
+  userList: any[] = [];
+  // api call integration
+  constructor(private http: HttpClient) {
+    
+  }
+
+  getUsers() {
+    this.http.get('https://jsonplaceholder.typicode.com/users').subscribe((res: any) => {
+      this.userList = res;
+      console.log(this.userList)
+    })
+  }
+}

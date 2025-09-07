@@ -1,0 +1,36 @@
+Template Driven Forms in Angular
+---------------------------------
+Template-driven forms are built primarily in the HTML template using Angular directives like [(ngModel)], #templateRefs, and form validation attributes.
+
+| Feature                  | Description                                                      |
+| ------------------------ | ---------------------------------------------------------------- |
+| **Declarative Approach** | Form logic is mostly written in the HTML template                |
+| **Uses `NgForm`**        | Automatically tracks the form and its controls                   |
+| **Uses `ngModel`**       | Two-way data binding between form fields and component variables |
+| **Validation**           | Handled using directives like `required`, `minlength`, etc.      |
+| **Form Submission**      | Uses `(ngSubmit)` on the `<form>` tag                            |
+| **Simplicity**           | Ideal for simpler forms without complex logic                    |
+
+<form #userForm="ngForm" (ngSubmit)="submitForm(userForm)" 
+style="display: flex; flex-direction: column; width: 250px;"
+>
+    <label>Name:</label>
+    <input type="text" name="username" [(ngModel)]="user.username" required />
+
+    <label>Email:</label>
+    <input type="email" name="email" [(ngModel)]="user.email" required />
+
+    <button style="margin-top: 20px; background-color: rgb(13, 119, 189);" type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
+
+User has submitted: {{user.username}}
+Email id entered: {{user.email}}
+
+user = 
+    {
+      username: '',
+      email: '',
+    };
+  submitForm(form: NgForm) {
+    console.log('Form Submitted:', form.value);
+  }

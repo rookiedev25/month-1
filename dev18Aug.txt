@@ -1,0 +1,87 @@
+Component communication using @Input and @Output:
+-------------------------------------------------
+1. Parent → Child (@Input)
+
+The parent passes data down to the child.
+
+The property decorated with @Input() exists inside the child component, but the parent sets its value.
+
+2. Child → Parent (@Output)
+
+The child emits an event up to the parent.
+
+The property decorated with @Output() exists inside the child component, but the parent listens to it.
+
+🔹 Separation of Responsibilities
+
+Child Component
+
+Declares @Input() (to receive data).
+
+Declares @Output() (to emit events).
+
+Parent Component
+
+Supplies data for @Input().
+
+Listens to events from @Output().
+
+✅ Example
+child.component.ts
+@Component({
+  selector: 'app-child',
+  template: `
+    <p>Got from parent: {{ childMessage }}</p>
+    <button (click)="sendNotification()">Notify Parent</button>
+  `
+})
+export class ChildComponent {
+  @Input() childMessage: string = '';     // For parent → child
+  @Output() notifyParent = new EventEmitter<string>(); // For child → parent
+
+  sendNotification() {
+    this.notifyParent.emit("Hello Parent, I'm Child!");
+  }
+}
+
+parent.component.html
+<!-- Sending data to child + listening to event -->
+<app-child 
+  [childMessage]="'Hello Child from Parent'" 
+  (notifyParent)="onNotify($event)">
+</app-child>
+
+parent.component.ts
+export class ParentComponent {
+  onNotify(message: string) {
+    console.log("Received from child:", message);
+  }
+}
+
+🧠 Think Like This:
+
+Child defines the "doors" → @Input (door to receive stuff), @Output (door to send stuff).
+
+Parent uses those doors → [ ] to send data in, ( ) to receive data out.
+
+
+Analogy with ReactJS:
+Parent → Child (with @Input) = Like passing props in React.
+
+Child → Parent (with @Output) = Like using a callback function passed as prop in React.
+
+Service in Angular = Similar to Context API (or Redux) in React.
+
+Both are used to avoid props drilling.
+
+They make the data centralized and available to multiple components without having to pass it down manually.
+
+👉 In Angular, Services + Dependency Injection give you a very powerful and clean way to share data across components.
+
+For example:
+
+Instead of passing user details through 4-5 components using @Input,
+
+You can create a UserService that stores the user info,
+
+Inject it wherever you need it → done ✅

@@ -1,0 +1,29 @@
+Routing in Angular
+------------------
+A included library that is present with Angular project/workspace creation. We have basic routes as app.routes.ts -- similar to binding the routes inside react App.jsx
+<Routes>
+    <Route .../>
+</Routes>
+
+app.routes.ts:
+---------------
+//* all the routes created here, are passed into app.config.ts as routes into provideRouter(route)
+export const routes: Routes = [
+    //* url for the components
+    // routes are objects, we can specify with some parameters
+    // {
+    //     path: 'admin',
+    //     component: HeaderComponent
+    // },
+
+    //* default-route
+    // {
+    //     path: '',
+    //     redirectTo: '', //? specify the pathname here
+    //     pathMatch: 'full', //? path-matching strategy: full, prefix
+        //? full looks like: localhost:4200/pathname
+       //? prefix looks like: /pathname
+    // }
+];
+
+
