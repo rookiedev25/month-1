@@ -46,7 +46,7 @@ const calculatedSpeed = (dist, time) => {
   return (dist / time) * 3.6;
 };
 
-// violation calculated
+// violation calculated - 
 const hasViolated = (speedLimitArray, calculatedSpeedOfVehicle, vehicleLocation) => {
     const speedLimitObj = speedLimitArray.find((item) => vehicleLocation === item.locationName)
     return speedLimitObj ? calculatedSpeedOfVehicle > speedLimitObj.limit : false
