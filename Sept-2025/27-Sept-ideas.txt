@@ -1,0 +1,41 @@
+To create a POC containing integration of AI Tools in Language Pack preparation
+
+Aspects that can be covered:
+- Language pack preparation -- mainly activities that has automation, (not sure about integration with AI tools directly)
+    - Involved Scripts that prepare Import data - 
+        Earlier idea was to prepare a GUI that can be installed into a system which can take care of creating Import data. This would contain scripts that will - 
+        + run before Import data preparation = usually after installation and before project creation
+        + run after project creation = used to copy all the .xml files from Global build zip to Import-data folders
+        + run after library export is done for all required .gms files - MNS, _BTL files 
+
+# Comments / Suggestions:
+# - Consider how AI tools can assist in automating the detection of missing or outdated files during import data preparation.
+# - Explore using AI for language quality checks or automated translation suggestions.
+# - Think about integrating AI-powered validation for script outputs to reduce manual errors.
+# - Evaluate if AI can help in summarizing changes or generating reports for each language pack build.
+# - Assess the feasibility of using AI for predictive defect detection based on historical data.
+# - Document the workflow for easier onboarding and future automation enhancements.
+
+What this solves - Creating a utility/tool for creating Import data makes this process robust and machine independent. Hence, next step would preparing all the scripts that are responsible for 
+            + Creating new TTKs, 
+            + Leverage process
+            + Rule updates ... more
+
+- Checklist Validation and Summary -- this should be around all sorts of deliveries for which Language pack team is responsible.    
+    - Last minute checks/delivery dependencies -- keeping this as record so next version, we are already ready
+        + Translation related defects / pending TTKs to include and get builds running
+        + Documentation translation - de, fr-FR, fr-CA 
+        + Findings - any bugs/errors while installation, other workflows while performing BQT for a delivery package
+        + Delivery summary or BQT summary for the weekly language packs -- can be an outcome of the previous stage
+
+- Query Management - to create something that is accessible by people who might have questions with the process/workflow
+        + This involves solving and answering any questions that are related to Language packs or Documentation topics.
+        + Information can be used from the Wiki pages, need to update the content as per latest followed workflows.
+        + 
+    - 
+
+
+- Translation of strings into different languages
+- Solving Defects for translation related topics
+- Features to get information out of Documentation files/Help-zips
+-  

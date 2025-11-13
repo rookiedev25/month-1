@@ -1,0 +1,10 @@
+- Developing an online tool or platform that can be used to:
+1. Store
+2. record
+3. Generate PDF outputs
+for all BQT reports usually done for Weekly Language pack delivery
+
+- Developing a tool/utility to convert .html into .md file >> can be used to convert Wiki pages into .md
+
+- Developing a ChatBot for Language Pack related Support and Queries - siemensGPT
+
